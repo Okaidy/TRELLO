@@ -1,0 +1,51 @@
+*{
+	font-family: 'Comfortaa', cursive;
+	color: #3f3844;
+}
+.amarillo {
+	background-color: #fad400;
+}
+.fondo {
+	background-color: #EAECEE;
+}
+section {
+	height: 590px;
+}
+.blanco{
+	color: white;
+}
+h1 {
+	font-family: 'Lobster', cursive;
+}
+#new {
+	width: 130px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: rgba(44,169,199,0.3); 
+	border:none;
+}
+
+#new:hover {
+	background-color: rgba(44,169,199,0.7);
+}
+
+form {
+	background-color: #2CA9C7;
+	padding: 15px;
+	width: 280px;
+	border-radius: 10px;
+	margin: 10px 20px 10px 0px;
+	display: inline-block;
+
+}
+input {
+	width: 100%;
+	padding: 5px 0px;
+}
+button {
+	display: block;
+	margin-top: 5px;
+	border:none;
+	border-radius: 5px;
+}
+

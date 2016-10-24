@@ -25,7 +25,7 @@ function crearFormulario() {
 }
 
 function crearLista(titulo,elemento){
-	var guardar = document.getElementsByTagName('button')
+	var guardar = document.getElementsByClassName('amarillo')
 	for (var i = 0; i < guardar.length; i++) {
 		guardar[i].onclick = function(){
 			if (titulo.value == 0){
@@ -50,11 +50,10 @@ function crearLista(titulo,elemento){
 }
 
 function crearTarjeta(btntjt) {
-	var nuevaTarjeta = document.getElementsByClassName('botonTarjeta');
-	for (var j = 0 ; j < nuevaTarjeta.length; j++) {
-		nuevaTarjeta[j].onclick = function() {
-			var nombreTarjeta = document.createElement('textarea');
-			this.parentNode.insertBefore(nombreTarjeta,btntjt);
-		}
-	}
+	btntjt.addEventListener('click',function(evento) {
+		var nombreTarjeta = document.createElement('textarea');
+		this.parentNode.insertBefore(nombreTarjeta,btntjt);
+		nombreTarjeta.focus();
+	},false);
 }
+

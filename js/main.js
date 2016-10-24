@@ -7,7 +7,7 @@ boton.onclick = function() {
 function crearFormulario() {
 	var formulario = document.createElement('div');
 	formulario.setAttribute("class","forma");
-	boton.parentNode.appendChild(formulario);
+	boton.parentNode.insertBefore(formulario, boton);
 
 	var nombre = document.createElement('input');
 	nombre.setAttribute("type","text");
@@ -20,10 +20,12 @@ function crearFormulario() {
 	agregar.setAttribute("type","submit");	
 	formulario.appendChild(agregar);
 
-	crearLista(nombre);
+	crearLista(nombre,formulario);
+
+
 }
 
-function crearLista(titulo){
+function crearLista(titulo,elemento){
 	var guardar = document.getElementsByTagName('button')
 	for (var i = 0; i < guardar.length; i++) {
 		guardar[i].onclick = function(){
@@ -33,12 +35,14 @@ function crearLista(titulo){
 				var contenedor = document.createElement('div');
 				contenedor.setAttribute("class","contenedor text-center");
 				contenedor.innerHTML = titulo.value.toUpperCase();
-				boton.parentNode.appendChild(contenedor);
+				boton.parentNode.insertBefore(contenedor,boton);
 				var btnTarjeta = document.createElement('button');
 				btnTarjeta.innerHTML="Añadir una tarjeta";
 				btnTarjeta.setAttribute("class","botonTarjeta blanco");
 				contenedor.appendChild(btnTarjeta);
+				
 				titulo.value="";
+				boton.parentNode.removeChild(elemento);
 			}
 		}
 	}

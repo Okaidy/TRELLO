@@ -13,6 +13,7 @@ function crearFormulario() {
 	nombre.setAttribute("type","text");
 	nombre.setAttribute("placeholder","Nombre de la lista");
 	formulario.appendChild(nombre);
+	nombre.focus();
 
 	var agregar = document.createElement('button')
 	agregar.innerHTML = "Aceptar";
@@ -21,8 +22,6 @@ function crearFormulario() {
 	formulario.appendChild(agregar);
 
 	crearLista(nombre,formulario);
-
-
 }
 
 function crearLista(titulo,elemento){
@@ -43,8 +42,19 @@ function crearLista(titulo,elemento){
 				
 				titulo.value="";
 				boton.parentNode.removeChild(elemento);
+
+				crearTarjeta();
 			}
 		}
 	}
+}
 
+function crearTarjeta() {
+	var nuevaTarjeta = document.getElementsByClassName('botonTarjeta');
+	for (var j = 0 ; j < nuevaTarjeta.length; j++) {
+		nuevaTarjeta[j].onclick = function() {
+			var nombreTarjeta = document.createElement('textarea');
+			this.parentNode.appendChild(nombreTarjeta);
+		}
+	}
 }
